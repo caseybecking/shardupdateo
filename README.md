@@ -12,6 +12,7 @@ modify and add your access key to the config.json
 vi sites.json
 add sites you would like to clone down for crawling through
 pip install -r REQUIREMENTS.txt
+python3 main.py
 
 
 ```

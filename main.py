@@ -8,16 +8,3 @@ print("This will take some time!!")
 for target_list in sites.parse_sites():
     github_connect.get_repo_contents(target_list[0])
     download_url.find_sources(dir_path+"/"+target_list[1]+"/")
-    
-
-
-
-
-
-
-
-
-
-
-
-
