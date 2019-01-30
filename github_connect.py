@@ -2,7 +2,7 @@ from github import Github
 from download_url import parse_download_url
 
 # Github Enterprise with custom hostname
-g = Github(base_url="https://api.github.com", login_or_token="55bf707283a6122c4e275dbf47f63132b5b65837")
+
 
 def get_repo_contents(target_list):
     # Then play with your Github objects:

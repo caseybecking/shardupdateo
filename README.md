@@ -4,9 +4,8 @@ The goal of this project is to find all of the sources within the repos you tell
 It will look in each repo, clone them down
 It will go through the files and find sources declariation for the modules and go check on that repo finding if the version you are using is the most up to date
 
-
+```
 Output:
-python3 main.py
 +-------------------------------------+-------------------------------+------------------------------------------------------------+------+-----------------+----------------+
 |                 Org                 |              Repo             |                            File                            | Line | Current Version | Latest Version |
 +-------------------------------------+-------------------------------+------------------------------------------------------------+------+-----------------+----------------+
@@ -16,3 +15,4 @@ python3 main.py
 | rackspace-infrastructure-automation |  aws-terraform-security_group | cap-aws-lamp/security_groups.tf |  2   |      0.0.4      |     v0.0.5     |
 | rackspace-infrastructure-automation | aws-terraform-vpc_basenetwork |       cap-aws-lamp/vpc.tf       |  2   |      0.0.2      |     v0.0.6     |
 +-------------------------------------+-------------------------------+------------------------------------------------------------+------+-----------------+----------------+
+```
