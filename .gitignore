@@ -117,6 +117,7 @@ dmypy.json
 
 # repos
 cap-*
+aws-terraform-*
 
 # config
 config.json
