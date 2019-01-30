@@ -1,0 +1,6 @@
+{
+    "DEFAULT": {
+        "GITHUB_PUBLIC_ACCESS_TOKEN": "<bunch_of_random_strings",
+        "GITHUB_BASE_URL": "https://api.github.com"
+    }
+}
