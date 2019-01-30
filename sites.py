@@ -10,7 +10,5 @@ def parse_sites():
         data = json.load(f)
         site = []
     for sites in data["sites"]:
-        site.append(sites["url"])
+        site.append([sites["url"],sites["repo"]])
     return(site)
-
-

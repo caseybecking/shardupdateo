@@ -4,6 +4,16 @@ The goal of this project is to find all of the sources within the repos you tell
 It will look in each repo, clone them down
 It will go through the files and find sources declariation for the modules and go check on that repo finding if the version you are using is the most up to date
 
+#Useage :
+git clone repo
+cd to repo
+mv config.json.sample config.json
+modify and add your access key to the config.json
+vi sites.json
+add sites you would like to clone down for crawling through
+pip install -r REQUIREMENTS.txt
+
+
 ```
 Output:
 +-------------------------------------+-------------------------------+------------------------------------------------------------+------+-----------------+----------------+

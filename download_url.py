@@ -84,20 +84,26 @@ def check_source_validity(source_url):
                 # url = org + '/' + parse_tags[0]
             repo_urls_version.append([org, parse_tags[0], version])
         else:
-
             #git@github.com:rackspace-infrastructure-automation/aws-terraform-elasticsearch//?ref=v0.0.2
             first_pass = source_url.split(':')
             # print(first_pass) 
             second_pass = first_pass[1].split('/')
             org = second_pass[0]
             repo = second_pass[1]
-            parse_tags = repo.split("?")
-            for parse_tag in parse_tags:
-                if 'ref=<git tag, branch, or commit hash here>' not in parse_tag :
-                    # version = parse_tags[1][5:][:-2]
-                    # repo_urls_version.append([org+'/'+parse_tag[:-4]])
-                    if ".git" in parse_tag:
-                        version = parse_tags[1][5:][:-2]
+            # print(repo)
+            if not helpers.is_word_in_text('ref=<git tag, branch, or commit hash here>', repo):
+                # print(second_pass)
+                version = second_pass[3][5:][:-2]
+                repo_urls_version.append([org, repo, version])
+            else:
+                parse_tags = repo.split("?")
+                # print(parse_tags)
+                for parse_tag in parse_tags:
+                    if 'ref=<git tag, branch, or commit hash here>' not in parse_tag :
+                        # version = parse_tags[1][5:][:-2]
+                        # repo_urls_version.append([org+'/'+parse_tag[:-4]])
+                        if ".git" in parse_tag:
+                            version = parse_tags[1][5:][:-2]
                         # print(version)
                         # repo_urls_version.append([org+'/'+parse_tag[:-4],version])
     return(repo_urls_version)

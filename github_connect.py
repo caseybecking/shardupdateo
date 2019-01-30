@@ -22,7 +22,7 @@ def get_repo_contents(target_list):
     target_url = target_list.split('/')
     del target_url[-1]
     repo_striped = target_url[-1]
-    repo_path = "rackerlabs/"+repo_striped
+    repo_path = target_url[3]+'/'+repo_striped
     repo = g.get_repo(repo_path)
     contents = repo.get_contents("")
     while len(contents) > 1:

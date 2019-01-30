@@ -11,9 +11,9 @@
             "url": "https://github.com/rackerlabs/cap-aws-lamp/"
         },
         {
-            "repo": "terraform-aws-rds",
-            "orginzation": "terraform-aws-modules",
-            "url": "https://github.com/terraform-aws-modules/terraform-aws-rds/"
+            "repo": "aws-terraform-rds",
+            "orginzation": "rackspace-infrastructure-automation",
+            "url": "https://github.com/rackspace-infrastructure-automation/aws-terraform-rds/"
         }
     ]
 }
