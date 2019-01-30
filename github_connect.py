@@ -1,8 +1,21 @@
+import os
+import json
 from github import Github
 from download_url import parse_download_url
 
-# Github Enterprise with custom hostname
+with open('config.json', 'r') as f:
+    config = json.load(f)
 
+access_token = config['DEFAULT']['GITHUB_PUBLIC_ACCESS_TOKEN']
+base_url = config['DEFAULT']['GITHUB_BASE_URL']
+
+if not access_token:
+    raise ValueError('You must have "GITHUB_PUBLIC_ACCESS_TOKEN" variable')
+
+if not base_url:
+    raise ValueError('You must have "GITHUB_BASE_URL" variable')
+
+g = Github(base_url=base_url, login_or_token=access_token)
 
 def get_repo_contents(target_list):
     # Then play with your Github objects:
