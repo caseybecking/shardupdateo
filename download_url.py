@@ -47,7 +47,7 @@ def find_sources(directory_in_str):
                             response1.append(repo)
                             response1.append(repo_tags[0])
                             response1.append(current_version)
-                            response1.append(directory_in_str+filename) 
+                            response1.append(filename) 
                             response1.append(num)
                             response.append(response1)
                 searchfile.close()

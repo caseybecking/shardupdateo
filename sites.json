@@ -1,19 +1,9 @@
 {
     "sites": [
         {
-            "repo": "cap-aws-magento",
-            "orginzation": "rackerlabs",
-            "url": "https://github.com/rackerlabs/cap-aws-magento/"
-        },
-        {
             "repo": "cap-aws-lamp",
-            "orginzation": "rackerlabs",
+            "organization": "rackerlabs",
             "url": "https://github.com/rackerlabs/cap-aws-lamp/"
-        },
-        {
-            "repo": "aws-terraform-rds",
-            "orginzation": "rackspace-infrastructure-automation",
-            "url": "https://github.com/rackspace-infrastructure-automation/aws-terraform-rds/"
         }
     ]
 }
