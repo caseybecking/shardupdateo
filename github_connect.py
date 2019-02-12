@@ -3,11 +3,14 @@ import json
 from github import Github
 from download_url import parse_download_url
 
-with open('config.json', 'r') as f:
-    config = json.load(f)
+if os.path.isfile('config.json'):
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+else:
+    config = {}
 
-access_token = os.getenv('GITHUB_PUBLIC_ACCESS_TOKEN', config['DEFAULT']['GITHUB_PUBLIC_ACCESS_TOKEN'])
-base_url = config['DEFAULT']['GITHUB_BASE_URL']
+access_token = os.getenv("GITHUB_PUBLIC_ACCESS_TOKEN", config.get('DEFAULT', {}).get('GITHUB_PUBLIC_ACCESS_TOKEN'))
+base_url = os.getenv("GITHUB_BASE_URL", config.get('DEFAULT', {}).get('GITHUB_BASE_URL', "https://api.github.com"))
 
 if not access_token:
     raise ValueError('You must have "GITHUB_PUBLIC_ACCESS_TOKEN" variable')
