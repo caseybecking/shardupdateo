@@ -6,7 +6,7 @@ from download_url import parse_download_url
 with open('config.json', 'r') as f:
     config = json.load(f)
 
-access_token = config['DEFAULT']['GITHUB_PUBLIC_ACCESS_TOKEN']
+access_token = os.getenv('GITHUB_PUBLIC_ACCESS_TOKEN', config['DEFAULT']['GITHUB_PUBLIC_ACCESS_TOKEN'])
 base_url = config['DEFAULT']['GITHUB_BASE_URL']
 
 if not access_token:
