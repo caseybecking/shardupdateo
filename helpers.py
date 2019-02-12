@@ -16,13 +16,16 @@ def compare_versions(org, repo, current_current, source_version):
 def remove_duplicates(l):
     return list(set(l))
 
-def parse_output(input):
-    t = PrettyTable(['Org', 'Repo', 'File', 'Line', 'Current Version', 'Latest Version'])
+def parse_output(input, source_repo):
+    t = PrettyTable(['Org', 'Repo', 'File', 'Line', 'Current Version', 'Latest Version', "Up to Date?"])
+    t.title = source_repo
     # t = Template('Org: $org - Repo: $repo - File: $file - Line: $line - Current Version: $current_version - Latest Version: $latest_version')
     #we will use this to create the output and push it out
     #from the repsone of compare versions
     input.sort()
     list(input for input,_ in itertools.groupby(input))
     for target_list in input:
-        t.add_row([target_list[1], target_list[0], target_list[4], target_list[5], target_list[3], target_list[2]])
+        up_to_date = "✅" if (target_list[3] == target_list[2]) else "❌"
+        t.add_row([target_list[1], target_list[0], target_list[4], target_list[5], target_list[3], target_list[2], up_to_date])
     print(t)
+    print("\n")
