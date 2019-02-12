@@ -121,3 +121,7 @@ aws-terraform-*
 
 # config
 config.json
+
+# Code
+.vscode
+.vscode/*
