@@ -1,9 +1,0 @@
-{
-    "sites": [
-        {
-            "repo": "cap-aws-lamp",
-            "organization": "rackerlabs",
-            "url": "https://github.com/rackerlabs/cap-aws-lamp/"
-        }
-    ]
-}

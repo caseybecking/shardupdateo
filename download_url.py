@@ -20,7 +20,7 @@ def parse_download_url(repo_name, name, download_url):
     else:
         urllib.request.urlretrieve(download_url, directory+'/'+name)   
 
-def find_sources(directory_in_str):
+def find_sources(repo_name, directory_in_str):
     directory = os.fsencode(directory_in_str)
     response = []
     for file in os.listdir(directory):
@@ -47,11 +47,11 @@ def find_sources(directory_in_str):
                             response1.append(repo)
                             response1.append(repo_tags[0])
                             response1.append(current_version)
-                            response1.append(filename) 
+                            response1.append(filename)
                             response1.append(num)
                             response.append(response1)
                 searchfile.close()
-    helpers.parse_output(response)
+    helpers.parse_output(response, repo_name)
 
 def check_source_validity(source_url):
     # splits = source_url.split(separator, maxsplit)

@@ -1,0 +1,9 @@
+{
+    "repos": [
+        {
+            "repo": "aws-terraform-rds",
+            "organization": "rackspace-infrastructure-automation",
+            "url": "https://github.com/rackspace-infrastructure-automation/aws-terraform-rds/"
+        }
+    ]
+}
