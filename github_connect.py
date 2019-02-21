@@ -30,12 +30,8 @@ def get_repo_contents(target_list):
     # in target url we check for a trailing /
     # if it doesnt exsist we add it to make sure the count is correct
     url = fix_target_url(target_url)
-    print(url)
     repo_striped = url[-1]
-    print(repo_striped)
-    print(url[3])
     repo_path = url[3]+'/'+repo_striped
-    print(g.get_repo(repo_path))
     repo = g.get_repo(repo_path, lazy=True)
     contents = repo.get_contents("")
     while len(contents) > 1:
